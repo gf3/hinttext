@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>HintText Demo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <script src="../vendor/prototype.js" type="text/javascript"></script>
+  <script src="../lib/hint_text.js" type="text/javascript"></script>
+  
+  <!-- Note: Don't actually put your scripts and styles inline. They're just here for simplicity's sake -->
+  <script type="text/javascript">
+    var hint;
+    
+    document.observe("dom:loaded", function() {
+      hint = new HintText();
+    });
+  </script>
+  
+  <style type="text/css">
+    
+    body {
+      font-family: helvetica, sans-serif;
+      color: #333;
+      font-size: 12px;
+    }
+    
+    .field {
+      position: relative;
+    }
+    
+    label.hint {
+      font-weight: bold;
+    }
+    
+    label.hint-apply {
+      position: absolute;
+      margin: 0;
+      top: 6px;
+      left: 5px;
+      z-index: 1;
+      color: #CFCFCF;
+      font-weight: normal;
+      cursor: text;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>HintText Demo</h1>
+
+<p>Please see <a href="http://github.com/giannichiappetta/hinttext/tree" title="HintText on GitHub">http://github.com/giannichiappetta/hinttext/tree</a> for full info.</p>
+
+<form action="#" method="post">
+  <div class="field">
+    <label class="hint" for="username">
+      Username
+    </label>
+    <input type="text" name="username" id="username" size="30" />
+  </div>
+  
+  <div class="field">
+    <label class="hint" for="password">
+      Password
+    </label>
+    <input type="password" name="password" id="password" size="30" />
+  </div>
+  
+  <div class="field">
+    <label class="hint" for="kindwords">
+      Some kind words.
+    </label>
+    <textarea name="kindwords" id="kindwords" cols="30" rows="6"></textarea>
+  </div>
+</form>
+
+</body>
+</html>

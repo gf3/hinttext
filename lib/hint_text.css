@@ -1,0 +1,25 @@
+/*------------------------------ HintText Styles ------------------------------*/
+/* Container of label and input. */
+.field {
+  position: relative; /* Important */
+}
+
+/* Styles when JavaScript is disabled. */
+label.hint {
+  /* Adjust-below to your needs :) */
+  font-weight: bold;
+}
+
+/* Styles for hint text. */
+label.hint-apply {
+  position: absolute; /* Important */
+  /* Adjust-below to your needs :) */
+  margin: 0;
+  padding: 0;
+  top: 6px;
+  left: 5px;
+  z-index: 1;
+  color: #CFCFCF;
+  font-weight: normal;
+  cursor: text;
+}
