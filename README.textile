@@ -1,3 +1,81 @@
 h1. HintText
 
-Hint text or hint labels for form inputs. Prototype-based, fully-spec'd, semantically correct, and cross-browser compliant. Based on this A List Apart article: http://www.alistapart.com/articles/makingcompactformsmoreaccessible
+Hint text or hint labels for form inputs. Prototype-based, fully-spec'd, semantically correct, and cross-browser compliant. Based on "this A List Apart article":http://www.alistapart.com/articles/makingcompactformsmoreaccessible
+
+h2. Usage
+
+h3. HTML
+
+HintText will search for all labels with the class _hint_ that reference an input. It then changes the class to _hint-apply_, and takes care of all the other heavy lifting.
+
+<pre>
+<code>
+<script type="text/javascript">
+  document.observe("dom:loaded", function() {
+    var hint = new HintText();
+  });
+</script>
+...
+<form action="#" method="post">
+  <div class="field">
+    <label class="hint" for="username">
+      Username
+    </label>
+    <input type="text" name="username" id="username" size="30" />
+  </div>
+</form>
+</code>
+</pre>
+
+h3. CSS
+
+Technically speaking you only need the following styles, but feel free to pretty-up your forms:
+
+<pre>
+<code>
+.field { /* This is the label & input container */
+  position: relative;
+}
+
+label.hint-apply {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  z-index: 1;
+}
+</code>
+</pre>
+
+It's important that there is a container that is relatively positioned, and the hint must be absolutely positioned. If you'd like to know why please read the "ALA article":http://www.alistapart.com/articles/makingcompactformsmoreaccessible.
+
+h3. Reusability
+
+Let's say you have some AJAX sexyness that inserts some form inputs with hint text, what do you do!? Easy, you just tell prototype to automagically initialze new HintText after each XHR request:
+
+<pre>
+<code>
+<script type="text/javascript">
+  document.observe("dom:loaded", function() {
+    window["hints"] = new HintText();
+  });
+  
+  Ajax.Responders.register({
+    onComplete: function() {
+      if (window['hints']) window['hints'].initializeElements();
+    }
+  });
+</script>
+</code>
+</pre>
+
+h2. Examples
+
+See the _examples/_ directory.
+
+h2. Author
+
+Written by Gianni Chiappetta - "Runlevel6":http://www.runlevel6.org/
+
+h3. Credits
+
+Thanks for the wonderful article on ALA by "Mike Brittain":http://www.mikebrittain.com/
