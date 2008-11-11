@@ -11,7 +11,7 @@ HintText will search for all labels with the class _hint_ that reference an inpu
 <pre>
 <code>
 <script type="text/javascript">
-  document.observe("dom:loaded", function() {
+  Event.observe(window, "load", function() {
     var hint = new HintText();
   });
 </script>
@@ -55,7 +55,7 @@ Let's say you have some AJAX sexyness that inserts some form inputs with hint te
 <pre>
 <code>
 <script type="text/javascript">
-  document.observe("dom:loaded", function() {
+  Event.observe(window, "load", function() {
     window["hints"] = new HintText();
   });
   
