@@ -11,7 +11,7 @@
   <script type="text/javascript">
     var hint;
     
-    document.observe("dom:loaded", function() {
+    Event.observe(window, "load", function() {
       hint = new HintText();
     });
   </script>
