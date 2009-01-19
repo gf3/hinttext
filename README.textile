@@ -71,6 +71,7 @@ Let's say you have some AJAX sexyness that inserts some form inputs with hint te
 h2. Examples
 
 See the _examples/_ directory.
+
 To see HintText in action, check out "GigPark":http://www.gigpark.com/.
 
 h2. Author
@@ -80,4 +81,5 @@ Written by Gianni Chiappetta - "Runlevel6":http://www.runlevel6.org/
 h3. Credits
 
 Thanks for the wonderful article on ALA by "Mike Brittain":http://www.mikebrittain.com/
+
 Thanks to "GigPark":http://www.gigpark.com/ for allowing me to release this!
